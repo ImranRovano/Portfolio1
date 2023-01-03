@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robinhood Newsletter Email</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+    
+    <style>
+
+        /* Large devices (Computer, 960px and up) */
+        @media only screen and (min-width: 960px) {
+            .container {
+                width: 960px;
+            }
+            .dow {
+                padding-right: 100px;
+            }
+            .nasdaq {
+                padding-right: 100px;
+            }
+            .treasury {
+                padding-right: 100px;
+            }
+            .sp {
+                padding-left: 100px;
+            }
+            .bitcoin {
+                padding-left: 100px;
+            }
+            .podcasts {
+                margin: 0;
+                width: 100%;
+            }
+        }
+
+        /* Medium devices (portrait tablets and large phones, 960px and down) */
+        @media only screen and (max-width: 960px) {
+            .container {
+                width: 600px;
+            }
+        }
+
+        /* Small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 80%;
+            }
+            .headerL .date {
+                padding-left: 30px;
+            }
+            .headerL .date .feather {
+                padding-top: 5px;
+                width: 40px !important;
+            }
+            .headerL .date h4 {
+                font-size: .8rem !important;
+            }
+            .headerR .disclose {
+                padding-right: 50px;
+                font-size: .8rem !important;
+            }
+            .top-section {
+                font-size: .8rem;
+            }
+            .top-section h4 {
+                padding: 10px 0 !important;
+            }
+            .dow {
+                width: 100%;
+            }
+            .dow div {
+                float: none !important;
+                text-align: center;
+                padding: 0 0 10px !important;
+            }
+            .dow h4 {
+                font-size: .9rem;
+            }
+            .dow p {
+                font-size: .9rem !important;
+            }
+            .sp {
+                width: 100%;
+            }
+            .sp div {
+                float: none !important;
+                text-align: center;
+                padding: 10px 0 10px !important;
+            }
+            .sp h4 {
+                font-size: .9rem;
+            }
+            .sp p {
+                font-size: .9rem !important;
+            }
+            .nasdaq {
+                width: 100%;
+            }
+            .nasdaq div {
+                float: none !important;
+                text-align: center;
+                padding: 10px 0 10px !important;
+            }
+            .nasdaq h4 {
+                font-size: .9rem;
+            }
+            .nasdaq p {
+                font-size: .9rem !important;
+            }
+            .bitcoin {
+                width: 100%;
+            }
+            .bitcoin div {
+                float: none !important;
+                text-align: center;
+                padding: 10px 0 10px !important;
+            }
+            .bitcoin h4 {
+                font-size: .9rem;
+            }
+            .bitcoin p {
+                font-size: .9rem !important;
+            }
+            .treasury {
+                width: 100%;
+            }
+            .treasury div {
+                float: none !important;
+                text-align: center;
+                padding: 10px 0 10px !important;
+            }
+            .treasury h4 {
+                font-size: .9rem;
+            }
+            .treasury p {
+                font-size: .9rem !important;
+            }
+            .hey-snackers {
+                font-size: .8rem;
+            }
+            .snapchat-new-years {
+                width: 100%;
+                text-align: center;
+                font-size: .8rem;
+            }
+            .snapchat-new-years p {
+                text-align: left;
+            }
+            .snapchat-new-years ul {
+                text-align: left;
+            }
+            .highs {
+                text-align: center;
+                font-size: .8rem;
+            }
+            .highs p {
+                text-align: left;
+            }
+            .lows {
+                text-align: center;
+                font-size: .8rem;
+            }
+            .lows p {
+                text-align: left;
+            }
+            .what-else {
+                text-align: center;
+                font-size: .8rem;
+            }
+            .what-else ul {
+                text-align: left;
+            }
+            .podcasts {
+                text-align: center;
+                font-size: .8rem;
+            }
+            .podcasts p {
+                text-align: left;
+            }
+            .podcasts ul {
+                text-align: left;
+            }
+            .podcasts .apple img {
+                width: 100px !important;
+                display: block !important;
+                margin: 0 auto;
+            }
+            .podcasts .apple div {
+                padding: 0 0 20px!important;
+            }
+            .podcasts .apple h2 {
+                font-size: 1rem;
+            }
+            .podcasts .apple h1 {
+                font-size: 1rem;
+            }
+            .podcasts .google img {
+                width: 100px !important;
+                display: block !important;
+                margin: 0 auto;
+            }
+            .podcasts .google div {
+                padding: 0 0 20px!important;
+            }
+            .podcasts .google h2 {
+                font-size: 1rem;
+            }
+            .podcasts .google h1 {
+                font-size: 1rem;
+            }
+            .podcasts .spotify {
+                margin: 0 auto;
+            }
+            .podcasts .spotify .spotify-bg {
+                width: 100px !important;
+                height: 75px !important;
+                display: block !important;
+                margin: 20px auto !important;
+            }
+            .podcasts .spotify .spotify-bg img {
+                width: 50px;
+                padding: 7px 0 0 3px !important;
+            }
+            .podcasts .spotify div {
+                padding: 0 0 20px!important;
+            }
+            .podcasts .spotify h2 {
+                font-size: 1rem;
+            }
+            .podcasts .spotify h1 {
+                font-size: 1rem;
+            }
+            .snack-of-the-day {
+                text-align: center;
+                font-size: .8rem;
+            }
+            .this-week {
+                text-align: center;
+                font-size: .8rem;
+            }
+            .this-week ul {
+                text-align: left;
+            }
+            .this-week p {
+                text-align: left;
+                margin-bottom: 0px !important;
+                font-size: .8rem;
+            }
+            .this-week .disclose2 {
+                padding-top: 30px;
+            }
+            .footer a {
+                display: block;
+            }
+            .footer .here {
+                display: inline-block;
+            }
+        }
+
+
+    </style>
+
+</head>
+<body style="height: 100%; font-family: 'Roboto', sans-serif;">
+    <!-- start container -->
+    <table border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <!-- start email -->
+                <table class="container" align="center" border="0" width="600" cellpadding="0" cellspacing="0" style="line-height: 1.4;">
+                    <!-- start of content row -->
+                    <!-- row1 -->
+                    <thead>
+                        <tr>
+                            <td>
+                                <table class="headerL" align="left" width="50%" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <div class="date">
+                                                <img class="feather" src="./img/Robinhood_Glyph_green.png" alt="#" style="width: 50px; float: left; filter: grayscale(100%); opacity: .5;">
+                                                <h4 style="filter: grayscale(100%); opacity: .2; font-weight: 600; font-size: 15px; letter-spacing: -.8px; margin: 0; padding-top: 15px;">
+                                                    January 6th
+                                                </h4>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="headerR" align="right" width="50%" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td >
+                                            <a class="disclose" href="#" style="float: right;  font-weight: 400; font-size: 15px; letter-spacing: -.8px;text-decoration: none;color: #21ce99; padding-top: 15px;">Disclosures</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </thead>
+                    <!-- row2 -->
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table class="top-section" align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <!-- Snacks title -->
+                                            <img class="title" src="./img/01+RH_Main_Logo.png" alt="#" style="width: 70%; display: block; margin: 0 auto; padding-bottom: 20px;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <!-- pic of two guys -->
+                                            <img class="picture" src="./img/MCDBOOK_EC060_H.jpg" alt="#" style="width: 100%; display: block; margin: 10px auto;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h4 class="cameo" style="text-align: center; font-weight: 400; padding-bottom: 70px; margin: 5px;">
+                                                <em>Snapchat: Going for best "Cameo" in a leading role</em>
+                                            </h4>
+                                            <h4 class="market" style="text-align: center; font-weight: 400; margin: 10px;">
+                                                Last Week's Market Moves
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- row3 -->
+                        <tr>
+                            <td>
+                                <table class="dow" width="50%" align="left" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <div style="padding-top: 20px; padding-bottom: 20px; padding-right: 18px; float: right;">
+                                                <h4 style="margin: 0; font-weight: 400;">
+                                                    Dow Jones
+                                                </h4>
+                                                <p style="margin: 0; font-weight: 600; font-size: 15px;">
+                                                    28,635 <span style="color: #f55531;">(-0.03%)</span>
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="sp" width="50%" align="right" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <div style="padding-top: 20px; padding-left: 40px;  padding-bottom: 20px;">
+                                                <h4 style="margin: 0; font-weight: 400;">
+                                                    S&P 500
+                                                </h4>
+                                                <p style="margin: 0; font-weight: 600; font-size: 15px;">
+                                                    3,235 <span style="color: #f55531;">(-0.15%)</span>
+                                                </p>
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="nasdaq" width="50%" align="left" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <div style="padding-top: 20px; padding-bottom: 20px; padding-right: 24px; float: right;">
+                                                <h4 style="margin: 0; font-weight: 400;">
+                                                    Nasdaq
+                                                </h4>
+                                                <p style="margin: 0; font-weight: 600; font-size: 15px;">
+                                                    9,021 <span style="color: #21ce99;">(+0.16%)</span>
+                                                </p>
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="bitcoin" width="50%" align="right" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <div style="padding-top: 20px; padding-left: 40px;  padding-bottom: 20px;">
+                                                <h4 style="margin: 0; font-weight: 400;">
+                                                    Bitcoin
+                                                </h4>
+                                                <p style="margin: 0; font-weight: 600; font-size: 15px;">
+                                                    $7,356 <span style="color: #21ce99;">(+0.57%)</span>
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="treasury" width="50%" align="left" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <div style="padding-top: 20px; padding-bottom: 20px; float: right;">
+                                                <h4 style="margin: 0; font-weight: 400;">
+                                                    10-Yr US Treasury
+                                                </h4>
+                                                <p style="margin: 0; font-weight: 600; font-size: 15px;">
+                                                    1.789%
+                                                </p>
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- row4 -->
+                        <tr>
+                            <td>
+                                <table class="hey-snackers">
+                                    <tr>
+                                        <td style="padding-top: 30px;">
+                                            <h4>
+                                                Hey Snackers,
+                                            </h4>
+                                            <p>
+                                                Snack <em>more.</em> It's our simple resolution for the decade — here's how you can too:
+                                            </p>
+                                            <ul>
+                                                <li style="padding-bottom: 15px;">
+                                                    <strong>Get this newsletter every day</strong> by subscribing with your email address using <a href="#" style="text-decoration: none; color: #21ce99;">this link</a>.
+                                                </li>
+                                                <li>
+                                                    Add some flavor to your brutal commute with our <strong>15 minute Snacks Daily podcast</strong> on <a href="#" style="text-decoration: none; color: #21ce99;">Apple</a> or <a href="#" style="text-decoration: none; color: #21ce99;">Spotify</a> (spoiler: today's was The Best One Yet).
+                                                </li>
+                                            </ul>
+                                            <p>
+                                                FYI, stock dipped in the 1st week of 2020 because conflict between the US and Iran could disrupt oil markets — <strong>and when you mess with oil, you mess with business</strong>.
+                                            </p>
+                                            <p>
+                                                <em>Want to start getting Snacks daily? Or prefer to unsubscribe? Manage your subscription preferences </em><a href="#" style="text-decoration: none; color: #21ce99;"><em>here</em></a>.
+                                            </p>
+                                            <hr style="margin: 50px 0; opacity: .2">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- row5 -->
+                        <tr>
+                            <td>
+                                <table class="snapchat-new-years">
+                                    <tr>
+                                        <td>
+                                            <div class="augment" style="background: rgba(33, 206, 153, 0.2); display:inline-block; opacity: .5; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;">
+                                                <h5 style="color: #00af7b; display:inline-block; margin: 0; padding: 6px 10px;">
+                                                    Augment
+                                                </h5>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h1 style="line-height: 1.2;">
+                                                Snapchat's New Year's Resolution:<br>(A)ugment your (R)eality with fun shenanigans
+                                            </h1>
+                                            <p>
+                                                <strong>Cat videos would be better...</strong> if your face replaced the feline's. That's the earth-shattering revelation behind "Cameos," <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">Snapchat's</a> new feature that superimposes your selfi in a short video. It's the type of viral animation that's core to Snapchat's DNA, so Snap <a href="#" style="text-decoration: none; color: #21ce99;">acquired</a> the startup behind Cameos, <strong>AI Factory</strong>, for a reported $166M last week.
+                                            </p>
+                                            <ul>
+                                                <li style="padding-bottom: 15px;">
+                                                    <strong>Location:</strong> Uncreatively-named AI Factory is based on Ukraine, with an office in San Francisco to convince those who judge books by their covers.
+                                                </li>
+                                                <li style="padding-bottom: 15px;">
+                                                    <strong>Not his first exit:</strong> Its founder is <a href="#" style="text-decoration: none; color: #21ce99;">Victor Shaburov</a> — who already sold a previous startup to Snap in 2015 (he's the tech artist behind <a href="#" style="text-decoration: none; color: #21ce99;">virtual rainbow vomiting</a>).
+                                                </li>
+                                                <li>
+                                                    <strong>Not dangerous (yet):</strong> Making a video of one person appear as another is the definition of "<a href="#" style="text-decoration: none; color: #21ce99;">Deepfake</a>" (it's a freaky futuristic technology that could potentially cause mayhem on what you think is true). But we tried Snap's Cameos — they're <em>shallow</em>fakes at best.
+                                                </li>
+                                            </ul>
+                                            <p>
+                                                <strong>Cameo > Lenses > Bitmoji...</strong> In a <a href="#" style="text-decoration: none; color: #21ce99;">leaked</a> 2018 letter to Snappers, CEO Evan Spiegal said 27 times that Snapchat should be "the fastest way to communicate." To accomplish that, text on Snapchat is laughable. Pictures are ok. Videos are better. So Bitmoji (also acquired by Snap), Lenses, and Cameos seperate Snap from Instagram, iMessage, and Twitter ('til Insta steals the idea).
+                                            </p>
+                                            <p style="font-weight: 600; padding-top: 20px;">
+                                                THE TAKEAWAY
+                                            </p>
+                                            <p>
+                                                <strong>Snap is the leader in Augmented Reality. Period...</strong> Tech leaders believe AR will replace smartphones, just like smartphones replaced many PCs. <strong>Facebook</strong>, <strong>Apple</strong>, and <strong>Google</strong> are all building headsets and glasses so they don't miss it. Before you strap a computer to your face, Snap's way ahead:
+                                            </p>
+                                            <ul>
+                                                <li style="padding-bottom: 15px;">
+                                                    Those tech giants <strong>haven't offered mainstream products yet</strong> — and Facebook's chied scientist <a href="#" style="text-decoration: none; color: #21ce99;">thinks</a> it'll be 5-10 years before they do.
+                                                </li>
+                                                <li style="padding-bottom: 15px;">
+                                                    <strong>Snap has</strong>. Its filters, lenses, and Spectacles take your real world, then augment it with humanity-improving <a href="#" style="text-decoration: none; color: #21ce99;">dancing hotdogs</a>.
+                                                </li>
+                                            </ul>
+                                            <hr style="margin: 50px 0 20px; opacity: .2">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- row6 -->
+                        <tr>
+                            <td>
+                                <table class="highs">
+                                    <tr>
+                                        <td>
+                                            <div style="background: rgba(33, 206, 153, 0.2); display:inline-block; opacity: .5; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;">
+                                                <h5 style="color: #00af7b; display:inline-block; margin: 0; padding: 6px 10px;">
+                                                    Highs
+                                                </h5>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2 style="padding-bottom: 20px;">
+                                                Who's up...
+                                            </h2>
+                                            <p>
+                                                <strong>Can we please talk about Apple's record high?...</strong> The stock doubled to become 2019's best performer in the Dow. Now <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">Apple's</a> got a new 2020 focus: <em>Make HomeKit happen</em>. That's the orange house-shaped, pre-downloaded app in your "rando Apple apps" folder — it connects your iPhone with your home (smart lights, smart thermostat, etc). At this week's Consumer Electronics Show, Apple is <a href="#" style="text-decoration: none; color: #21ce99;">sharing</a> its plans for HomeKit to make money off iPhone nation.
+                                            </p>
+                                            <p>
+                                                <strong><em>FIFA 2019. Pokemon. Call of Duty...</em></strong> All lost to <strong>Fortnite</strong>. The 3-year-old game hauled in $1.8B last year to keep its crown as Earth's <a href="#" style="text-decoration: none; color: #21ce99;">most lucrative</a> video game (FYI, that's down 25% from 2018). Credit its popularity ad a virtual hangout place, and add in some seasonal changes for keeping the game fresh. Fortnite's parent company, <strong>Epic Games</strong>, isn't publicly-traded — but its biggest investor is China's game-glomerate <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">Tencent</a>, whose shares trade publicly.
+                                            </p>
+                                            <hr style="margin: 50px 0 20px; opacity: .2">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- row 7 -->
+                        <tr>
+                            <td>
+                                <table class="lows">
+                                    <tr>
+                                        <td>
+                                            <div style="background: rgba(33, 206, 153, 0.2); display:inline-block; opacity: .5; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;">
+                                                <h5 style="color: #00af7b; display:inline-block; margin: 0; padding: 6px 10px;">
+                                                    Lows
+                                                </h5>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h2 style="padding-bottom: 20px;">
+                                                ...And who's down
+                                            </h2>
+                                            <p>
+                                                <strong>Ever wanted to charge <em>Uber</em> surge pricing?...</strong> That's kinda what California is doing. The AB5 "gig law" would treat drivers like actual employees, not independent contractors — that could raise the ride-hailer's costs by 30%. So <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">Uber</a> and <strong>Postmates</strong> <a href="#" style="text-decoration: none; color: #21ce99;">sued</a> California because they feel singled-out as an industry (their words: AB5 is "irrational and unconstitutional"). The law took effect on January 1st, so Uber's pulling an Uber and <a href="#" style="text-decoration: none; color: #21ce99;">won't comply</a> while it fights.
+                                            </p>
+                                            <p>
+                                                <strong>Pump anxiety...</strong> Airlines are feeling it. Fresh after the US killed Iran's top general, oil prices immediately <a href="#" style="text-decoration: none; color: #21ce99;">jumped</a> 4% to $68.60 (Middle East oil trade is a fragile thing). US airline stocks immediately fell, led down by <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">American Airlines</a> — that fuel makes up about <a href="#" style="text-decoration: none; color: #21ce99;">24%</a> of their total costs. Good thing the growing US economy just landed airlines' their 10th-straight profitable year.
+                                            </p>
+                                            <hr style="margin: 50px 0 0; opacity: .2">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- row 8 -->
+                        <tr>
+                            <td>
+                                <table class="what-else">
+                                    <tr>
+                                        <td>
+                                            <h2>
+                                                What else we're Snackin'
+                                            </h2>
+                                            <ul style="padding-bottom: 20px;">
+                                                <li style="padding-bottom: 15px;">
+                                                    <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">Sold</a>: How 2019 was the year of the wireless headphone
+                                                </li>
+                                                <li style="padding-bottom: 15px;">
+                                                    <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">Work</a>: Resumé trend of 2020: Add your "high scores"
+                                                </li>
+                                                <li style="padding-bottom: 15px;">
+                                                    <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">Venture</a>: 10 (little) tweaks that'll make big-time changes to your pitch
+                                                    deck (keep size 12 font in your college essays)
+                                                </li>
+                                                <li style="padding-bottom: 15px;">
+                                                    <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">List</a>: 9 apps to help you be more organized in 2020
+                                                </li>
+                                                <li style="padding-bottom: 15px;">
+                                                    <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">Crypto</a>: The IRS' new 2019 tax form is out and they want to know about
+                                                    your crypto moves
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- row 9 -->
+                        <tr>
+                            <td>
+                                <table class="podcasts" style="background: #fafafa; border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; margin: 0 auto;">
+                                    <tr>
+                                        <td>
+                                            <div  style="width: 95%; margin: 0 auto;">
+                                                <h2 style="padding: 10px 10px 20px;">
+                                                    The Snacks Daily Podcast
+                                                </h2>
+                                                <p style="padding-left: 20px;">
+                                                    Our 1st potential IPO of 2020: <strong>One Medical</strong> filed paperwork to go public while you were nursing that NYE hangover.
+                                                </p>
+                                                <ul>
+                                                    <li style="padding-bottom: 15px;">
+                                                        <strong>81%</strong> of consumers are dissatisfied by their healthcare situation
+                                                    </li>
+                                                    <li style="padding-bottom: 15px;">
+                                                        So One Medical is trying to <strong>create a brand <em>in an industry that ignores brands</em></strong>
+                                                    </li>
+                                                    
+                                                </ul>
+                                                <p style="padding-left: 20px; padding-bottom: 25px;">
+                                                    Our 15 minute Snack Daily pod signed up for an appointment.
+                                                </p>
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="apple" style="width: 80%; background: white; margin: 0 auto 20px; border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; border: 2px solid #eeeeee;">
+                                                <a href="#" style="text-decoration: none;">
+                                                    <img src="./img/apple-podcast-png-podcasts-app-icon-300.png" alt="#" style="width: 100px; height: 100px; padding: 20px 35px 15px 25px; display: inline-block; position: relative;">
+                                                    <div style="display: inline-block; position: relative; padding: 30px 85px 35px 0; vertical-align: top; color: black;">
+                                                        <h2 style="font-weight: 400; margin: 0;">
+                                                        Listen on
+                                                        </h2>
+                                                        <h1 style="margin: 0;">
+                                                            Apple Podcasts
+                                                        </h1>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="google" style="width: 80%; background: white; margin: 0 auto 20px; border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; border: 2px solid #eeeeee;">
+                                                <a href="#" style="text-decoration: none;">
+                                                    <img src="./img/Google_Podcasts_Logo.png" alt="#" style="width: 100px; height: 100px; padding: 20px 35px 15px 25px; display: inline-block; position: relative;">
+                                                    <div style="display: inline-block; position: relative; padding: 30px 65px 35px 0; vertical-align: top; color: black;">
+                                                        <h2 style="font-weight: 400; margin: 0;">
+                                                        Listen on
+                                                        </h2>
+                                                        <h1 style="margin: 0;">
+                                                            Google Podcasts
+                                                        </h1>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="spotify" style="width: 80%; background: white; margin: 0 auto 30px; border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; border: 2px solid #eeeeee;">
+                                                <a href="#" style="text-decoration: none;">
+                                                    <div class="spotify-bg" style="width: 100px; height: 100px; background: black; display: inline-block; margin: 20px 35px 17px 25px; position:relative; border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 20px 20px 20px 20px;">
+                                                        <img src="./img/Spotify_Icon_CMYK_Green.png" alt="#" style="width: 80%; padding-left: 11px; padding-top: 10px;">
+                                                    </div>
+                                                    <div style="display: inline-block; position: relative; padding: 30px 65px 35px 0; vertical-align: top; color: black;">
+                                                        <h2 style="font-weight: 400; margin: 0;">
+                                                        Listen on
+                                                        </h2>
+                                                        <h1 style="margin: 0;">
+                                                            Spotify Podcasts
+                                                        </h1>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- row 10 -->
+                        <tr>
+                            <td>
+                                <table class="snack-of-the-day">
+                                    <tr>
+                                        <td style="padding-top: 25px;">
+                                            <h2>
+                                                <strong>Snack Fact Of the Day</strong>
+                                            </h2>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h1 style="padding-left: 20px; padding-bottom: 30px;">
+                                                <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">Online purchases are 3 to 4 times more likely to be returned than whatever you splurged on in-store</a>
+                                            </h1>
+                                            <hr style="margin: 50px 0; opacity: .2">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- row 11 -->
+                        <tr>
+                            <td>
+                                <table class="this-week">
+                                    <tr>
+                                        <td>
+                                            <h2 style="padding-bottom: 25px;">
+                                                This Week
+                                            </h2>
+                                            <ul>
+                                                <li style="padding-bottom: 15px;">
+                                                    <strong>Monday:</strong> Congress returns from holiday break
+                                                </li>
+                                                <li style="padding-bottom: 15px;">
+                                                    <strong>Tuesday:</strong> The Consumer Electronics Show (<a href="#" style="text-decoration: none; color: #21ce99;">CES</a>) kicks off in Las Vegas
+                                                </li>
+                                                <li style="padding-bottom: 15px;">
+                                                    <strong>Wednesday:</strong> Earnings from <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">Bed Bath & Beyond</a>, <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">Walgreens</a>, <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">RPM</a>
+                                                </li>
+                                                <li style="padding-bottom: 15px;">
+                                                    <strong>Thursday:</strong> Earnings from <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">WD-40</a>, <a href="#" style="font-weight: 600; text-decoration: none; color: #21ce99;">KB Home</a>
+                                                </li>
+                                                <li style="padding-bottom: 15px;">
+                                                    <strong>Friday:</strong> The official government Jobs Report for December
+                                                </li>
+                                            </ul>
+                                            <p class="disclose2" style="padding-left: 20px;">
+                                                Disclosure: Authors of this Snacks own shares of Apple
+                                            </p>
+                                            <p style="padding-left: 20px;">
+                                                ID: 0123456
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                <table class="footer">
+                                    <tr>
+                                        <td style="width: 100%; font-size: 10px;">
+                                            <p style="color: #afaaac">
+                                                Robinhood Snacks newsletters and podcasts reflect the opinions of only the authors who are associated persons of Robinhood Financial LLC and do not reflect the views affiliates. They are meant for informational purposes only, are not intended to serve as a recommendation to buy or sell any security in a self-directed Robinhood account or any other account, and are not an offer or sale of a security. They are also not research reports and are not intended to serve as the basis for any investment decision. Any third-party information provided therein does not reflect the views of Robinhood Markets, Inc., Robinhood Financial LLC, or any of their subsidiaries or affiliates. All investments involve risk and the past performance of a security or financial product does not guarantee future results or returns. Keep in mind that while diversification may help spread risk, it does not assure a profit or protect against loss. There is always the potential of losing money when you invest in securities or other financial products. Investors should consider their investment objectives and risks carefully before investing. The price of a given security may increase or decrease based on market conditions and customers may lose money, including their original investment. Robinhood Financial LLC, member FINRA/SIPC. Testimonials may not be representative of the experience of other customers and are not guarantees of future performance or success. Robinhood Financial LLC, member FINRA/SIPC.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p style="font-size: 10px; line-height: 2; margin: 0;">
+                                                <a href="#" style="text-decoration: none; color: #21ce99; margin-right: 20px;">Robinhood Terms and Conditions</a>
+                                                <a href="#" style="text-decoration: none; color: #21ce99; margin-right: 20px;">Disclosure Library</a>
+                                                <a href="#" style="text-decoration: none; color: #21ce99; margin-right: 20px;">Our Editorial Principles</a>
+                                                <a href="#" style="text-decoration: none; color: #21ce99; margin-right: 20px;">Contact Us</a>
+                                                <a href="#" style="text-decoration: none; color: #21ce99; margin-right: 20px;">FAQ<br></a>
+                                                <a href="#" style="text-decoration: none; color: #21ce99; margin-right: 20px;">Manage Your Subscription Preferences</a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-top: 0; padding-bottom: 100px;">
+                                            <p style="color: #afaaac; font-size: 10px; margin: 0;">
+                                                To unsubscribe from all commercial emails, click <a class="here" href="#" style="text-decoration: none; color: #21ce99;">here</a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tfoot>                    
+                    <!-- end of content row -->
+                </table>
+                <!-- end email -->
+            </td>
+        </tr>
+    </table>
+    <!-- end container -->
+</body>
+</html>
